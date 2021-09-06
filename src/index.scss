@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;290;300;400;500;600;700;800;900&display=swap');
+
+$primary-color: #00A4B8;
+$gray_1: #BABABA;
+$font-family: 'Roboto', sans-serif;
+
+html,body {
+  font-family: $font-family;
+  font-size: 16px;
+}
+.App {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 0 8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  nav {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      img {
+        height: 1.5rem;
+      }
+      flex: 1;
+    }
+
+    .nav_item {
+      .responsive_menu {
+        display: none;
+      }
+      > ul {
+        display: flex;
+        li {
+          list-style-type: none;
+          padding: 0 1rem;
+          cursor: pointer;
+          &:not(#dropdown):hover {
+            color: $primary-color ;
+          }
+
+          &#dropdown {
+            position: relative;
+            &:hover {
+              ul {
+                display: block;
+                transition: 2s all;
+              }
+            }
+          }
+
+          .dropdown {
+            &_select {
+              color: #BABABA;
+              svg {
+                position: absolute;
+                top: 1px;
+              }
+            }
+            &_list {
+              position: absolute;
+              width: 150px;
+              right: 0;
+              border-radius: 6px;
+              margin-top: 1rem;
+              box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+              &:before {
+                content: '';
+                position: absolute;
+                top: -1rem;
+                height: 1rem;
+                width: 100%;
+              }
+
+              ul {
+                display: none;
+                padding: .5rem;
+                li {
+                  flex-wrap: nowrap;
+                  padding: .5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 2;
+  .wave, svg {
+    position: absolute;
+    z-index: 1;
+  }
+  .responsive_wave {
+    display: none;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: $primary-color;
+    line-height: 24px;
+    z-index: 10;
+  }
+
+  .content {
+    padding: 20% 5% 2rem 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    .head {
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 4rem;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem;
+    }
+    .learn_more {
+      flex: 1;
+      height: 60%;
+      padding-left: 2rem;
+      border-left: 0.5px solid $gray_1;
+      .text {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+.who_we_are {
+
+}
+
+.team {
+  background: $primary-color;
+  color: #ffffff;
+  .wave {
+    top: 10%;
+    left: 5%;
+  }
+  .content {
+    padding: 8% 5% 2rem 45%;
+    h3 {
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+    .head {
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 4.5rem;
+      margin-bottom: 4.5rem;
+    }
+    .learn_more {
+      border-left: 0.5px solid #fff;
+      .text {
+        font-size: 1rem;
+        line-height: 24px;
+        margin-bottom: 2rem;
+      }
+      a {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.funds {
+  position: relative;
+  z-index: 2;
+  .content {
+    padding: 5% 15% 2rem 45%;
+    .head {
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 4.5rem;
+      margin-bottom: 3rem;
+    }
+    a {
+      flex: 1;
+      margin-top: 1rem;
+    }
+    .carousel {
+      position: relative;
+      &_button {
+        position: absolute;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        left: -35%;
+        span {
+          cursor: pointer;
+          font-size: 8rem;
+          color: $primary-color;
+          opacity: .2;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+      .carousel_button_responsive {
+        visibility: hidden;
+      }
+      &_content {
+        display: none;
+        &.active {
+          display: block;
+        }
+
+        &_head {
+          font-size: 2.5rem;
+          color: $primary-color;
+        }
+        &_charts {
+          svg {
+            position: relative;
+          }
+        }
+        &_list {
+          ul {
+            li {
+              width: 50%;
+              list-style-type: none;
+              padding: .5rem 0;
+              border-bottom: 1px solid $gray_1;
+              &:first-child {
+                border-top: 1px solid $gray_1;
+              }
+            }
+          }
+          &_title {
+            margin-right: .5rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  header {
+    padding: 0 1rem;
+    nav {
+      .logo {
+        img {
+          height: 1rem;
+        }
+      }
+      .nav_item {
+        .desktop {
+          display: none;
+        }
+        .responsive_menu {
+          display: flex;
+          svg {
+            margin-left: 1rem;
+          }
+        }
+      }
+
+    }
+  }
+
+  .container {
+    height: auto;
+    .content {
+      padding: 2rem 1rem;
+      .learn_more {
+          padding-left: 0;
+          border-left: none;
+        .text {
+        }
+      }
+    }
+    &.who_we_are {
+      .responsive_wave {
+        display: block;
+        svg {
+          position: relative;
+          margin-top: 4rem;
+        }
+      }
+      .pin-spacer, .wave {
+        display: none;
+      }
+      .content {
+        .head {
+          font-size: 2.2rem;
+          line-height: 3rem;
+        }
+      }
+    }
+    &.team {
+      .wave {
+        position: relative;
+        svg {
+          max-width: 350px;
+          max-height: 350px;
+          position: relative;
+        }
+      }
+    }
+    &.funds {
+      .carousel_button {
+        display: none;
+      }
+      .carousel_button_responsive {
+        visibility: visible !important;
+        display: flex;
+        margin-bottom: 1rem;
+        justify-content: space-between;
+        span {
+          cursor: pointer;
+          font-size: 4rem;
+          color: $primary-color;
+          opacity: .2;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+      .carousel_content {
+        &_head {
+          font-size: 1.5rem;
+        }
+        &_charts {
+          svg {
+            max-width: 380px;
+          }
+        }
+      }
+    }
+  }
+}

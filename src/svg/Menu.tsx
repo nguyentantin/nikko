@@ -1,0 +1,32 @@
+import React from 'react';
+
+const Menu = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="2.5"
+        y1="6.77783"
+        x2="21.5"
+        y2="6.77783"
+        stroke="#474747"
+        strokeWidth="2"
+      />
+      <line
+        x1="2.5"
+        y1="15.2222"
+        x2="21.5"
+        y2="15.2222"
+        stroke="#474747"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+};
+
+export default Menu;
